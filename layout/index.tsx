@@ -18,6 +18,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
               <li>
                 <Link href="/blog">Blog</Link>
               </li>
+              <li>
+                <Link href="/notes/client">Notes</Link>
+              </li>
              
             </ul>
           </div>
