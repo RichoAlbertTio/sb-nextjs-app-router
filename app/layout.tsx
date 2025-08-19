@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CountProvider } from "@/context";
+
 
 import MainLayout from "@/layout";
 
@@ -28,7 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* <p>Route Layout</p> */}
-        <MainLayout>{children}</MainLayout>
+        <CountProvider>
+          <MainLayout>{children}</MainLayout>
+        </CountProvider>
       </body>
     </html>
   );

@@ -1,6 +1,14 @@
+"use client";
+
 import Link from "next/link";
+// import { useCount } from "@/context";
+import { dataStore } from "@/store/dataStore";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
+  //  setter dan getter dari context
+  // const { count } = useCount();
+  const { count } = dataStore((state) => state);
+
   return (
     <>
      
@@ -26,6 +34,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         <main className="flex-1 container mx-auto p-4">
+          <div>
+            <p>{`Count: ${count}`}</p>
+          </div>
           {children}
         </main>
         <footer className="bg-gray-800 text-white p-4 text-center">
